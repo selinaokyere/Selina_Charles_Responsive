@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <Title>BrightField Showroom</Title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">  
+        <link rel="icon" href="./logo/bright.png">
+        <link rel="stylesheet" href=
+        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+        <style>
+          /*add full-width input fields*/
+	input[type=text],
+	input[type=password] {
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		display: inline-block;
+		border: 2px solid #ccc;
+		box-sizing: border-box;
+	}
+	/* set a style for all buttons*/
+	button {
+		background-color:#0dcaf0;
+		color: white;
+		padding: 14px;
+		margin: 8px 0;
+		cursor: pointer;
+		width: 70%;
+	}
+	/*set styles for the cancel button*/
+	.cancelbtn {
+		padding: 14px 20px;
+		background-color: #FF2E00;
+	}
+	/*float cancel and signup buttons and add an equal width*/
+	.cancelbtn,
+	.signupbtn {
+		float: left;
+		width: 50%;
+    padding: 5px 14px;
+	}
+	/*add padding to container elements*/
+	.container55 {
+		padding: 16px;
+	}
+	/*define the modal’s background*/
+	
+	.modal {
+		display: none;
+		position: fixed;
+		z-index: 1;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		background-color: rgb(0, 0, 0);
+		background-color: rgba(0, 0, 0, 0.4);
+		padding-top: 60px;
+	}
+	/*define the modal-content background*/
+	
+	.modal-content {
+		background-color: #fefefe;
+		margin: 5% auto 15% auto;
+		border: 1px solid #888;
+		width: 80%;
+	}
+	/*define the close button*/
+	
+	.close {
+		position: absolute;
+		right: 35px;
+		top: 15px;
+		color: #FF2E00;
+		font-size: 40px;
+		font-weight: bold;
+	}
+	/*define the close hover and focus effects*/
+	
+	.close:hover,
+	.close:focus {
+		color: red;
+		cursor: pointer;
+	}
+	
+	.clearfix::after {
+		content: "";
+		clear: both;
+		display: table;
+	}
+	
+	@media screen and (max-width: 300px) {
+		.cancelbtn,
+		.signupbtn {
+			width: 30%;
+		}
+	}
+        </style>
+      </head>
+    <body>
+        
+      <nav class="navbar .navbar-nav navbar-expand-lg navbar-light">
+            <div class="container-fluid naviga">
+              <a class="navbar-brand" href="#"> <img class="img-fluids" src="./logo/storelogo1.png" width="140px" height="56px"> </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search for your favourite items" aria-label="Search" style="width: 400px; margin-top: 7px;">
+                <button class="btn btn-outline-success" style="padding: 1px; background-color: lightgreen;" type="submit">Search</button>
+              </form>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  
+                 
+                  <li class="nav-item dropdown">
+                    <a style="color: black; font-size: large;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Account <object data="./logo/user.svg" width="30px" height="20px"> </object>
+
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">
+                       	<!--Step 1:Adding HTML-->
+	<button onclick="document.getElementById('id01').style.display='block'" style="width:auto; margin-left: -7px; padding: 5px 14px;">Sign Up</button>
+
+	<div id="id01" class="modal">
+		<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+		<form class="modal-content animate" action="/action_page.php">
+			<div class="container55">
+				<label><b>Email</b></label><br>
+				<input type="text" placeholder="Enter Email" name="email" required>
+        <br>
+				<label><b>Password</b></label><br>
+				<input type="password" placeholder="Enter Password" name="psw" required>
+        <br>
+				<label><b>Repeat Password</b></label> <br>
+				<input type="password" placeholder="Repeat Password" name="psw-repeat" required> <br>
+				<input type="checkbox"> Remember me<br>
+				<p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p><br>
+
+				<div class="clearfix">
+					<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+					<button type="submit" class="signupbtn">Sign Up</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<!--close the modal by just clicking outside of the modal-->
+	<script>
+		var modal = document.getElementById('id01');
+
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
+	</script>
+	</a></li>
+                      <li><a class="dropdown-item" href="#">Sign In <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                      </svg></a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#"> Orders &nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-inbox-fill" viewBox="0 0 16 16">
+                        <path d="M4.98 4a.5.5 0 0 0-.39.188L1.54 8H6a.5.5 0 0 1 .5.5 1.5 1.5 0 1 0 3 0A.5.5 0 0 1 10 8h4.46l-3.05-3.812A.5.5 0 0 0 11.02 4H4.98zm-1.17-.437A1.5 1.5 0 0 1 4.98 3h6.04a1.5 1.5 0 0 1 1.17.563l3.7 4.625a.5.5 0 0 1 .106.374l-.39 3.124A1.5 1.5 0 0 1 14.117 13H1.883a1.5 1.5 0 0 1-1.489-1.314l-.39-3.124a.5.5 0 0 1 .106-.374l3.7-4.625z"/>
+                      </svg></a></li>
+                    </ul>
+              </li>
+                    <li class="nav-item dropdown">
+                        <a style="color: white; font-size: large;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Help <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
+                          </svg>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="#">Help Center</a></li>
+                          <li><a class="dropdown-item" href="#">Place / Track Orders</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Cancel Orders</a></li>
+                        </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"  style="color: black; font-size: large;" href="#">Cart <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+                      <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                    </svg> </a>
+                  </li>
+                </ul>
+                
+              </div>
+            </div>
+      </nav>
+        
+        <div class="container-fluid content">
+          <div class="rows">
+            <div class="col-91">
+              <img class="img-fluid fluid1" src="./logo/15651531807021476324.gif" width="100%" style="margin: 0px;">
+
+              <section id="items">
+                <!-- items start1 -->
+                <div class="card" style="width: 210px; height: 350px;">
+                  <img class="card-img-top" src="./items/item1.jpg" alt="Card image cap" height="200px" width="100%">
+                  <hr style="margin-bottom: 0px; margin-top: 0px;">
+                  <div class="card-body"> 
+                    <h4 style="font-weight: bolder; color: red;" class="card-title">GH&#8373; 80</h4>
+                    <p class="card-text"> Colorful del keyboard for apple mac devices</p>
+                    <a href="#" class="btn btn-primary">ADD TO CART</a>
+                  </div>
+                </div>
+
+                <!-- items start2 -->
+                <div class="card" style="width: 210px; height: 350px;">
+                  <img class="card-img-top" src="./items/item2.jpeg" alt="Card image cap" height="200px" width="100%">
+                  <hr style="margin-bottom: 0px; margin-top: 0px;">
+                  <div class="card-body"> 
+                    <h4 style="font-weight: bolder; color: red;" class="card-title">GH&#8373; 6300</h4>
+                    <p class="card-text"> Iphone 12 pro max. Factory unlocked with diffrent colours</p>
+                    <a href="#" class="btn btn-primary">ADD TO CART</a>
+                  </div>
+                </div>
+
+                <!-- items start3-->
+                <div class="card" style="width: 210px; height: 350px;">
+                  <img class="card-img-top" src="./items/item4.jpg" alt="Card image cap" height="200px" width="100%">
+                  <hr style="margin-bottom: 0px; margin-top: 0px;">
+                  <div class="card-body"> 
+                    <h4 style="font-weight: bolder; color: red;" class="card-title">GH&#8373; 100</h4>
+                    <p class="card-text"> Patek Shiny gold watch available for bulk purchase</p>
+                    <a href="#" class="btn btn-primary">ADD TO CART</a>
+                  </div>
+                </div>
+
+                <!-- items start4 -->
+                <div class="card" style="width: 210px; height: 350px;">
+                  <img class="card-img-top" src="./items/item6.jpg
+                  " alt="Card image cap" height="200px" width="100%">
+                  <hr style="margin-bottom: 0px; margin-top: 0px;">
+                  <div class="card-body"> 
+                    <h4 style="font-weight: bolder; color: red;" class="card-title">GH&#8373; 410</h4>
+                    <p class="card-text"> Energy efficient refrigerator with power rating of 3 stars</p>
+                    <a href="#" class="btn btn-primary">ADD TO CART</a>
+                  </div>
+                </div>
+
+                <!-- items start 5-->
+                <div class="card" style="width: 210px; height: 350px;">
+                  <img class="card-img-top" src="./items/item5.jpg" alt="Card image cap" height="200px" width="100%">
+                  <hr style="margin-bottom: 0px; margin-top: 0px;">
+                  <div class="card-body"> 
+                    <h4 style="font-weight: bolder; color: red;" class="card-title">GH&#8373; 240</h4>
+                    <p class="card-text"> Highly power efficient microwave for domestic use</p>
+                    <a href="#" class="btn btn-primary">ADD TO CART</a>
+                  </div>
+                </div>
+
+                 <!-- items start 6-->
+                 <div class="card" style="width: 210px; height: 350px;">
+                  <img class="card-img-top" src="./items/item3.jpg" alt="Card image cap" height="200px" width="100%">
+                  <hr style="margin-bottom: 0px; margin-top: 0px;">
+                  <div class="card-body"> 
+                    <h4 style="font-weight: bolder; color: red;" class="card-title">GH&#8373; 82</h4>
+                    <p class="card-text"> Young men casual designer deep blue sneakers </p>
+                    <a href="#" class="btn btn-primary">ADD TO CART</a>
+                  </div>
+                </div>
+
+                 <!-- items start 7-->
+                 <div class="card" style="width: 210px; height: 350px;">
+                  <img class="card-img-top" src="./items/item7.jpg" alt="Card image cap" height="200px" width="100%">
+                  <hr style="margin-bottom: 0px; margin-top: 0px;">
+                  <div class="card-body"> 
+                    <h4 style="font-weight: bolder; color: red;" class="card-title">GH&#8373; 170</h4>
+                    <p class="card-text"> Foldable, affordable wardrobe for indoors and bedrooms.</p>
+                    <a href="#" class="btn btn-primary">ADD TO CART</a>
+                  </div>
+                </div>
+
+                 <!-- items start 8-->
+                 <div class="card" style="width: 210px; height: 350px;">
+                  <img class="card-img-top" src="./items/item8.jpg" alt="Card image cap" height="200px" width="100%">
+                  <hr style="margin-bottom: 0px; margin-top: 0px;">
+                  <div class="card-body"> 
+                    <h4 style="font-weight: bolder; color: red;" class="card-title">GH&#8373; 1520</h4>
+                    <p class="card-text"> 32 inches smart 4k Television for household</p>
+                    <a href="#" class="btn btn-primary">ADD TO CART</a>
+                  </div>
+                </div>
+
+
+              </section> 
+            </div>
+
+
+            <div class="col-31 col-31">
+              <aside>
+              <img class=".img-fluid" src="./logo/another.jpg" height="65px" width="100%" style="margin-bottom: 2px;">
+              <img class=".img-fluid" src="./logo/another3.jpg" height="70px" width="100%">
+              <h3>Select Category</h3>
+              <ul>
+                <li>Bags and Luggage</li>
+                <li>Clothing</li>
+                <li>Toys for Kidz</li>
+                <li>Furniture</li>
+                <li>Laptops and Phones</li>
+                <li>Electrical appliance</li>
+                <li>Wedding</li>
+                <li>Hair</li>
+                <li>Beauty</li>
+                <li>Watch & Jewelry</li>
+              </ul>
+              <img class=".img-fluid" src="./logo/another1.jpg" height="75px" width="100%" style="margin-top: 3px">
+              <img class=".img-fluid" src="./logo/another2.jpg" height="75px" width="100%" style="margin-top: 3px">
+              <img class=".img-fluid" src="./logo/brightfield12.jpg" height="75px" width="100%" style="margin-top: 3px">
+    
+            </aside>
+            </div>
+          </div>
+          </div>
+          
+          <div class="container-fluid content11">
+            
+             <!-- items start 9-->
+             <div class="card" style="width: 210px; height: 350px;">
+              <img class="card-img-top" src="./items/item9.png" alt="Card image cap" height="200px" width="100%">
+              <hr style="margin-bottom: 0px; margin-top: 0px;">
+              <div class="card-body"> 
+                <h4 style="font-weight: bolder; color: red;" class="card-title">GH&#8373; 880</h4>
+                <p class="card-text">Portable kids tablets for studies and games.</p>
+                <a href="#" class="btn btn-primary">ADD TO CART</a>
+              </div>
+            </div>
+
+            <!-- items start 10-->
+            <div class="card" style="width: 210px; height: 350px;">
+              <img class="card-img-top" src="./items/item10.jpg" alt="Card image cap" height="200px" width="100%">
+              <hr style="margin-bottom: 0px; margin-top: 0px;">
+              <div class="card-body"> 
+                <h4 style="font-weight: bolder; color: red;" class="card-title">GH&#8373; 2000</h4>
+                <p class="card-text"> L.E.D android 4k view Television with Netflix. </p>
+                <a href="#" class="btn btn-primary">ADD TO CART</a>
+              </div>
+            </div>
+
+             <!-- items start11 -->
+             <div class="card" style="width: 210px; height: 350px;">
+              <img class="card-img-top" src="./items/item11.jpg" alt="Card image cap" height="200px" width="100%">
+              <hr style="margin-bottom: 0px; margin-top: 0px;">
+              <div class="card-body"> 
+                <h4 style="font-weight: bolder; color: red;" class="card-title">GH&#8373; 50</h4>
+                <p class="card-text"> Loud speaker headset for android and PC devices</p>
+                <a href="#" class="btn btn-primary">ADD TO CART</a>
+              </div>
+            </div>
+
+             <!-- items start12 -->
+             <div class="card" style="width: 210px; height: 350px;">
+              <img class="card-img-top" src="./items/item12.jpeg" alt="Card image cap" height="200px" width="100%">
+              <hr style="margin-bottom: 0px; margin-top: 0px;">
+              <div class="card-body"> 
+                <h4 style="font-weight: bolder; color: red;" class="card-title">GH&#8373; 80</h4>
+                <p class="card-text"> Airpord pro for apple devices, ultra audio booster.</p>
+                <a href="#" class="btn btn-primary">ADD TO CART</a>
+              </div>
+            </div>
+
+             <!-- items start 13-->
+             <div class="card" style="width: 210px; height: 350px;">
+              <img class="card-img-top" src="./items/item13.jpeg" alt="Card image cap" height="200px" width="100%">
+              <hr style="margin-bottom: 0px; margin-top: 0px;">
+              <div class="card-body"> 
+                <h4 style="font-weight: bolder; color: red;" class="card-title">GH&#8373; 95</h4>
+                <p class="card-text"> Ladies casual Sandals for outdoor wear</p>
+                <a href="#" class="btn btn-primary">ADD TO CART</a>
+              </div>
+            </div>
+      
+
+            <!-- items start14 -->
+            <div class="card" style="width: 210px; height: 350px;">
+              <img class="card-img-top" src="./items/item14.png" alt="Card image cap" height="200px" width="100%">
+              <hr style="margin-bottom: 0px; margin-top: 0px;">
+              <div class="card-body"> 
+                <h4 style="font-weight: bolder; color: red;" class="card-title">GH&#8373; 88</h4>
+                <p class="card-text">Ladies fashion white clothing top and down</p>
+                <a href="#" class="btn btn-primary">ADD TO CART</a>
+              </div>
+            </div>
+
+             <!-- items start 15-->
+             <div class="card" style="width: 210px; height: 350px;">
+              <img class="card-img-top" src="./items/item15.jpeg" alt="Card image cap" height="200px" width="100%">
+              <hr style="margin-bottom: 0px; margin-top: 0px;">
+              <div class="card-body"> 
+                <h4 style="font-weight: bolder; color: red;" class="card-title">GH&#8373; 66</h4>
+                <p class="card-text"> Both sex neon black watch with led display</p>
+                <a href="#" class="btn btn-primary">ADD TO CART</a>
+              </div>
+            </div>
+
+            <!-- items start16 -->
+            <div class="card" style="width: 210px; height: 350px;">
+              <img class="card-img-top" src="./items/item16.png" alt="Card image cap" height="200px" width="100%">
+              <hr style="margin-bottom: 0px; margin-top: 0px;">
+              <div class="card-body"> 
+                <h4 style="font-weight: bolder; color: red;" class="card-title">GH&#8373; 43</h4>
+                <p class="card-text"> Men beach outdoor shirt with design.</p>
+                <a href="#" class="btn btn-primary">ADD TO CART</a>
+              </div>
+            </div>
+
+             <!-- items start 17-->
+             <div class="card" style="width: 210px; height: 350px;">
+              <img class="card-img-top" src="./items/item17.jpeg" alt="Card image cap" height="200px" width="100%">
+              <hr style="margin-bottom: 0px; margin-top: 0px;">
+              <div class="card-body"> 
+                <h4 style="font-weight: bolder; color: red;" class="card-title">GH&#8373; 220</h4>
+                <p class="card-text"> Men brown shiny fashion casual pair of shoes </p>
+                <a href="#" class="btn btn-primary">ADD TO CART</a>
+              </div>
+            </div>
+
+            <!-- items start18 -->
+            <div class="card" style="width: 210px; height: 350px;">
+              <img class="card-img-top" src="./items/item18.png" alt="Card image cap" height="200px" width="100%">
+              <hr style="margin-bottom: 0px; margin-top: 0px;">
+              <div class="card-body"> 
+                <h4 style="font-weight: bolder; color: red;" class="card-title">GH&#8373; 72</h4>
+                <p class="card-text"> Fashion 3 Piece Leather HandBag Set -Brown </p>
+                <a href="#" class="btn btn-primary">ADD TO CART</a>
+              </div>
+            </div>
+
+             <!-- items start 19-->
+             <div class="card" style="width: 210px; height: 350px;">
+              <img class="card-img-top" src="./items/item19.jpg" alt="Card image cap" height="200px" width="100%">
+              <hr style="margin-bottom: 0px; margin-top: 0px;">
+              <div class="card-body"> 
+                <h4 style="font-weight: bolder; color: red;" class="card-title">GH&#8373; 300</h4>
+                <p class="card-text"> Mens Big Size Leather Classic Loafers 38-46 - Brown</p>
+                <a href="#" class="btn btn-primary">ADD TO CART</a>
+              </div>
+            </div>
+
+            <!-- items start 20-->
+            <div class="card" style="width: 210px; height: 350px;">
+              <img class="card-img-top" src="./items/item20.jpg" alt="Card image cap" height="200px" width="100%">
+              <hr style="margin-bottom: 0px; margin-top: 0px;">
+              <div class="card-body"> 
+                <h4 style="font-weight: bolder; color: red;" class="card-title">GH&#8373; 170</h4>
+                <p class="card-text"> Fashion Ladies High Waist Slim Glittering Party Dress</p>
+                <a href="#" class="btn btn-primary">ADD TO CART</a>
+              </div>
+            </div>
+            
+            <!-- items start 21-->
+            <div class="card" style="width: 210px; height: 350px;">
+              <img class="card-img-top" src="./items/item21.jpg" alt="Card image cap" height="200px" width="100%">
+              <hr style="margin-bottom: 0px; margin-top: 0px;">
+              <div class="card-body"> 
+                <h4 style="font-weight: bolder; color: red;" class="card-title">GH&#8373; 5043</h4>
+                <p class="card-text"> Iphone 12 pro max refurbished</p>
+                <a href="#" class="btn btn-primary">ADD TO CART</a>
+              </div>
+            </div>
+
+            <!-- items start22 -->
+            <div class="card" style="width: 210px; height: 350px;">
+              <img class="card-img-top" src="./items/item22.jpg" alt="Card image cap" height="200px" width="100%">
+              <hr style="margin-bottom: 0px; margin-top: 0px;">
+              <div class="card-body"> 
+                <h4 style="font-weight: bolder; color: red;" class="card-title">GH&#8373; 143</h4>
+                <p class="card-text"> Modern students laptop bag with power bank</p>
+                <a href="#" class="btn btn-primary">ADD TO CART</a>
+              </div>
+            </div>
+
+             <!-- items start 23-->
+             <div class="card" style="width: 210px; height: 350px;">
+              <img class="card-img-top" src="./items/item23.jpeg" alt="Card image cap" height="200px" width="100%">
+              <hr style="margin-bottom: 0px; margin-top: 0px;">
+              <div class="card-body"> 
+                <h4 style="font-weight: bolder; color: red;" class="card-title">GH&#8373; 220</h4>
+                <p class="card-text"> Men brown shiny fashion casual pair of shoes </p>
+                <a href="#" class="btn btn-primary">ADD TO CART</a>
+              </div>
+            </div>
+
+            <!-- items start 24 -->
+            <div class="card" style="width: 210px; height: 350px;">
+              <img class="card-img-top" src="./items/item24.jpg" alt="Card image cap" height="200px" width="100%">
+              <hr style="margin-bottom: 0px; margin-top: 0px;">
+              <div class="card-body"> 
+                <h4 style="font-weight: bolder; color: red;" class="card-title">GH&#8373; 600 </h4>
+                <p class="card-text"> Modern inbuilt printer and HD picture plotter </p>
+                <a href="#" class="btn btn-primary">ADD TO CART</a>
+              </div>
+            </div>
+
+             <!-- items start 25-->
+             <div class="card" style="width: 210px; height: 350px;">
+              <img class="card-img-top" src="./items/item25.jpg" alt="Card image cap" height="200px" width="100%">
+              <hr style="margin-bottom: 0px; margin-top: 0px;">
+              <div class="card-body"> 
+                <h4 style="font-weight: bolder; color: red;" class="card-title">GH&#8373; 205</h4>
+                <p class="card-text"> 3D VR Virtual Reality Headset Phone Lightweight Glasses</p>
+                <a href="#" class="btn btn-primary">ADD TO CART</a>
+              </div>
+            </div>
+
+            <!-- items start 26-->
+            <div class="card" style="width: 210px; height: 350px;">
+              <img class="card-img-top" src="./items/item26.jpg" alt="Card image cap" height="200px" width="100%">
+              <hr style="margin-bottom: 0px; margin-top: 0px;">
+              <div class="card-body"> 
+                <h4 style="font-weight: bolder; color: red;" class="card-title">GH&#8373; 11200</h4>
+                <p class="card-text"> MacBook Air Pro 13 inch PU Leather Laptop </p>
+                <a href="#" class="btn btn-primary">ADD TO CART</a>
+              </div>
+            </div>
+
+            </div> 
+
+           <!-- Footer -->
+     <footer>
+      <div class="container">
+        <div class="footer-cols">
+          <ul>
+            <li>Shop & Learn</li>
+            <li>
+              <a href="#">Electrical appliance</a>
+            </li>
+            <li>
+              <a href="#">Men clothing</a>
+            </li>
+            <li>
+              <a href="#">Computer and accesories</a>
+            </li>
+            <li>
+              <a href="#">Sneakers</a>
+            </li>
+            <li>
+              <a href="#">Mobile Phone</a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>About Us</li>
+            <li>
+              <a href="#">Find a Store</a>
+            </li>
+            <li>
+              <a href="#">Black friday</a>
+            </li>
+            <li>
+              <a href="#">Terms and conditions</a>
+            </li>
+            <li>
+              <a href="#">Testimonials</a>
+            </li>
+            <li>
+              <a href="#">Order Status</a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>Make money with us</li>
+            <li>
+              <a href="#">Delivery man</a>
+            </li>
+            <li>
+              <a href="#">Sell at BrightField</a>
+            </li>
+            <li>
+              <a href="#">Learn at Brightfield</a>
+            </li>
+            <li>
+              <a href="#">Participate in Hackathons</a>
+            </li>
+            <li>
+              <a href="#">Jobs Opportunity alert</a>
+            </li>
+          </ul>
+
+          <ul>
+            <li>F.A.Q's</li>
+            <li>
+              <a href="#">Newsroom</a>
+            </li>
+            <li>
+              <a href="#">Discount</a>
+            </li>
+            <li>
+              <a href="#">I How to use K-Pay </a>
+            </li>
+            <li>
+              <a href="#">Cart and Coupons</a>
+            </li>
+            <li>
+              <a href="#">Wish Lists</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+      <div class="footer-bottom text-center">
+       <h4 style="font-style: oblique; color: #0dcaf0;"> Copyright &copy; 2021 Charles Bih and Selina Okyere <br> </h4>
+        <h3> Connect with us: </h3>&nbsp;
+        <a href="https://web.facebook.com/groups/993678098126314"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+          <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+        </svg></a>
+&nbsp; &nbsp;
+      
+  <a href="https://t.co/XD2WsBcK44?amp=1"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
+          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"/>
+        </svg> </a>
+        &nbsp; &nbsp;
+
+        <a href="https://twitter.com/techwithbta">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+          <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+        </svg> </a>
+      </div>
+  </footer>
+    
+          
+    </body>
+</html>
